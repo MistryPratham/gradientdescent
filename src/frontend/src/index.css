@@ -1,0 +1,170 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-display: "Space Grotesk", sans-serif;
+    --font-body: "Space Grotesk", sans-serif;
+    --font-mono: "Geist Mono", monospace;
+    --radius: 0.25rem;
+
+    --background: 0.12 0 0;
+    --foreground: 0.96 0 0;
+    --card: 0.16 0 0;
+    --card-foreground: 0.96 0 0;
+    --popover: 0.19 0 0;
+    --popover-foreground: 0.96 0 0;
+
+    --primary: 0.65 0.22 200;
+    --primary-foreground: 0.12 0 0;
+
+    --secondary: 0.22 0 0;
+    --secondary-foreground: 0.88 0 0;
+    --muted: 0.22 0 0;
+    --muted-foreground: 0.58 0 0;
+
+    --accent: 0.68 0.25 310;
+    --accent-foreground: 0.12 0 0;
+
+    --destructive: 0.62 0.22 22;
+    --destructive-foreground: 0.96 0 0;
+
+    --border: 0.24 0 0;
+    --input: 0.24 0 0;
+    --ring: 0.65 0.22 200;
+
+    --chart-1: 0.65 0.22 200;
+    --chart-2: 0.68 0.25 310;
+    --chart-3: 0.58 0.18 140;
+    --chart-4: 0.62 0.2 45;
+    --chart-5: 0.72 0.2 95;
+
+    --sidebar: 0.16 0 0;
+    --sidebar-foreground: 0.96 0 0;
+    --sidebar-primary: 0.65 0.22 200;
+    --sidebar-primary-foreground: 0.12 0 0;
+    --sidebar-accent: 0.22 0 0;
+    --sidebar-accent-foreground: 0.88 0 0;
+    --sidebar-border: 0.24 0 0;
+    --sidebar-ring: 0.65 0.22 200;
+  }
+
+  .dark {
+    --background: 0.12 0 0;
+    --foreground: 0.96 0 0;
+    --card: 0.16 0 0;
+    --card-foreground: 0.96 0 0;
+    --popover: 0.19 0 0;
+    --popover-foreground: 0.96 0 0;
+
+    --primary: 0.65 0.22 200;
+    --primary-foreground: 0.12 0 0;
+
+    --secondary: 0.22 0 0;
+    --secondary-foreground: 0.88 0 0;
+    --muted: 0.22 0 0;
+    --muted-foreground: 0.58 0 0;
+
+    --accent: 0.68 0.25 310;
+    --accent-foreground: 0.12 0 0;
+
+    --destructive: 0.62 0.22 22;
+    --destructive-foreground: 0.96 0 0;
+
+    --border: 0.24 0 0;
+    --input: 0.24 0 0;
+    --ring: 0.65 0.22 200;
+
+    --chart-1: 0.65 0.22 200;
+    --chart-2: 0.68 0.25 310;
+    --chart-3: 0.58 0.18 140;
+    --chart-4: 0.62 0.2 45;
+    --chart-5: 0.72 0.2 95;
+
+    --sidebar: 0.16 0 0;
+    --sidebar-foreground: 0.96 0 0;
+    --sidebar-primary: 0.65 0.22 200;
+    --sidebar-primary-foreground: 0.12 0 0;
+    --sidebar-accent: 0.22 0 0;
+    --sidebar-accent-foreground: 0.88 0 0;
+    --sidebar-border: 0.24 0 0;
+    --sidebar-ring: 0.65 0.22 200;
+  }
+
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+}
+
+@font-face {
+  font-family: "Space Grotesk";
+  src: url("/assets/fonts/SpaceGrotesk.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Geist Mono";
+  src: url("/assets/fonts/GeistMono.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@layer utilities {
+  .transition-smooth {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .plot-grid {
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.03) 1px,
+        transparent 1px
+      ), linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+
+  .plot-border {
+    border: 1px solid oklch(var(--border));
+  }
+
+  .metric-label {
+    @apply text-xs font-mono text-muted-foreground tracking-wide;
+  }
+
+  .metric-value {
+    @apply text-sm font-mono font-semibold text-foreground;
+  }
+
+  .control-button {
+    @apply px-3 py-2 text-xs font-medium rounded transition-smooth border border-border hover:bg-muted active:bg-muted/80 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .control-button-primary {
+    @apply bg-primary text-primary-foreground hover:bg-primary/90 border-primary;
+  }
+
+  .text-chart-3 {
+    color: oklch(var(--chart-3));
+  }
+
+  .text-chart-4 {
+    color: oklch(var(--chart-4));
+  }
+
+  .bg-chart-3\/10 {
+    background-color: oklch(var(--chart-3) / 0.1);
+  }
+
+  .border-chart-3\/50 {
+    border-color: oklch(var(--chart-3) / 0.5);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: oklch(var(--border)) transparent;
+  }
+}

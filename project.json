@@ -1,0 +1,19 @@
+{
+  "overview": "An interactive gradient descent visualizer where you can tweak the learning rate in real time and watch the algorithm animate down a loss curve to the minimum.",
+  "features": [
+    "2D loss function plot with animated descent path",
+    "Adjustable learning rate slider (0.001–0.5)",
+    "Play, Pause, Step, and Reset controls",
+    "Live metrics: position, function value, gradient, and iteration count",
+    "Auto-stop on convergence"
+  ],
+  "category": "tool",
+  "tags": [
+    "gradient-descent",
+    "machine-learning",
+    "visualization",
+    "interactive",
+    "education"
+  ],
+  "last_updated": "2026-04-21T11:21:01.145Z"
+}
